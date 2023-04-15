@@ -4,14 +4,12 @@ import com.example.demo.model.Alien;
 import com.example.demo.service.AlienRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-
+//    @RestController
 @Controller
 public class HomeController {
     @Autowired
@@ -50,4 +48,24 @@ public class HomeController {
     public Optional<Alien> Alien(@PathVariable("pid") int pid){
         return alienRepo.findById(pid);
     }
+
+
+
+
+//        @PostMapping(path = "/alien",consumes = {"application/json"})
+//        public Alien addlien(@RequestBody Alien alien){
+//            alienRepo.save(alien);
+//            return alien;
+//        }
+//        @GetMapping(path="/aliens")
+//        public List<Alien> Alien(){
+//            return alienRepo.findAll();
+//        }
+
+//        @RequestMapping("/alien/{pid}")
+//        public Optional<Alien> Alien(@PathVariable("pid") int pid){
+//            return alienRepo.findById(pid);
+//        }
+//    }
+
 }
